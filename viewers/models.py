@@ -1,9 +1,22 @@
 from django.db import models
 
-# Create your models here.
-# class Task(models.Model):
-#     title = models.CharField(max_length=255)
-#     description = models.TextField()
+class Viewer(models.Model):
+    location_id = models.IntegerField()
+    period_start = models.DateTimeField()
+    period_start_date = models.DateField()
+    period_start_time = models.TimeField()
     
-#     def __str__(self):
-#         return self.title
+    very_happy = models.FloatField()
+    happy = models.FloatField()
+    neutral = models.FloatField()
+    unhappy = models.FloatField()
+    very_unhappy = models.FloatField()
+    
+    gender = models.IntegerField()
+    age = models.IntegerField()
+    dwell_time_in_tenths_of_sec = models.IntegerField()
+    attention_time_in_tenths_of_sec = models.IntegerField()
+    age_value = models.IntegerField()
+    
+    def __str__(self):
+        return str(self.location_id)
