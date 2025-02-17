@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import OTSListView
+from .views import OTSDayView, OTSWeekView
 
 urlpatterns = [
-    path('ots/', OTSListView.as_view(), name='ots-list'),
+    path('day', OTSDayView.as_view(), name='ots-list-day'),
+    path('week', OTSWeekView.as_view(), name='ots-list-week'),
 ]

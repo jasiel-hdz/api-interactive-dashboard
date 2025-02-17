@@ -1,11 +1,10 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-# from taskmanager.views import TaskListAPIView, TaskDetailAPIView
+url = 'api/'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('tasks/', TaskListAPIView.as_view(), name='task-list'),
-    # path('tasks/<int:pk>/', TaskDetailAPIView.as_view(), name='task-detail'),
-    # path('api-auth/', include('rest_framework.urls')),
+    path(f'{url}ots/', include('ots.urls')),
+    path(f'{url}viewers/', include('viewers.urls')),
 ]
